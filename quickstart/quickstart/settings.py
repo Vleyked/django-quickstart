@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     "quickstart_first_step",
 ]
 
+# AUTHENTICATION_BACKENDS = ["django.contrib.auth.backends.ModelBackend"]
+
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
@@ -100,6 +102,11 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+# Custom Auth model
+AUTH_USER_MODEL = "quickstart_first_step.CustomUser"
+
+# Custom logout redirection
+LOGOUT_REDIRECT_URL = "/"
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
