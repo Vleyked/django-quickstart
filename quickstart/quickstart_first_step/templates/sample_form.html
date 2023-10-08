@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% load tailwind_filters %}
+
+{% block content %}
+<h2 class="text-xl font-semibold mb-4"> Sample Crispy Tailwind Form</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form|crispy }}
+    <button type="submit" class="mt-4 px-4 bg-blue-500 text-white rounded hover:bg-blue-600">submit</button>
+</form>
+{% endblock %}
+

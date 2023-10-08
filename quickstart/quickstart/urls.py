@@ -38,4 +38,5 @@ urlpatterns = [
         auth_views.PasswordChangeDoneView.as_view(),
         name="password_change_done",
     ),
+    path("sample_form/", views.sample_form_view, name="sample_form"),
 ]

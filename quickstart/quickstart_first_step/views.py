@@ -4,7 +4,7 @@ from django.http import HttpResponse
 from django.shortcuts import redirect, render
 
 # from django.contrib.auth.forms import UserCreationForm
-from .forms import CustomUserCreationForm
+from .forms import CustomUserCreationForm, Simpleform
 from .models import CustomUser
 
 
@@ -22,6 +22,16 @@ def register(request):
     else:
         form = CustomUserCreationForm()
     return render(request, "registration/register.html", {"form": form})
+
+
+def sample_form_view(request):
+    if request.method == "POST":
+        form = Simpleform(request.POST)
+        if form.is_valid():
+            form = Simpleform()
+    else:
+        form = Simpleform()
+    return render(request, "sample_form.html", {"form": form})
 
 
 @login_required
